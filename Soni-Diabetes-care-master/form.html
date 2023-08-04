@@ -1,0 +1,295 @@
+<DOCTYPE html>
+  <html>
+    <head>
+    <script
+      src="https://kit.fontawesome.com/fb65f5d132.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/navigation.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/banner.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+    <link rel="stylesheet" href="css/copyright.css" />
+    <link rel="stylesheet" href="css/section.css" />
+    <style>
+      input[type="text"],input[type = "tel"],
+      select {
+        width: 50%;
+        font-size: 25px;
+        padding: 2px;
+        padding-left: 10PX;
+        margin: 5px 0;
+        display:inline- block;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      
+      input[type = "button"] {
+        display: block;
+        width: 30%;
+        background-color:black;
+        margin: 20px auto;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="button"]:hover {
+        background-color:blue;
+      }
+
+      .form {
+        border-radius: 5px;
+        background-color: darkgray;
+        padding: 50px 20px;
+
+        width: 60%;
+        display: block;
+        margin: 0px auto;
+        
+      }
+      label {
+        font-size: 25px;
+        padding: 10px ;
+        padding-left: 50px;
+        display: inline-block;
+        width: 40%;
+    
+      }
+    </style>
+
+  
+      <script>
+          function doStuff() {
+          var name = "";
+          var phn = "";
+          var email = "";
+          var doctor = "";
+          var description = "";
+          var nameElement = document.getElementById("phn");
+          var phn = nameElement.value;
+          var nameElement = document.getElementById("email");
+          var email = nameElement.value;
+          var nameElement = document.getElementById("doctor");
+          var doctor = nameElement.value;
+          var nameElement = document.getElementById("description");
+          var description = nameElement.value;
+          var name = document.getElementById("fname").value;
+      
+        
+          if (fname = "" || phn == "" || email == "" || doctor == "" || description == "" ){
+                alert("Enter all the fields");
+      
+              }
+              else{
+              
+                
+          document.getElementById("form").innerHTML = 
+           "Thank You!! <br> Your response has been recorded <br> We will contact you soon."
+          Email.send({
+            Host: "smtp.gmail.com",
+            Username: "uzumki002@gmail.com",
+            Password: "jaypee01",
+            To: "kshitijgupta879@gmail.com",
+            From: "uzumki002@gmail.com",
+            Subject: "Name of patient = " + name,
+            Body:
+              "Name =" +
+              name +
+              "<br>" +
+              " phn =" +
+              phn +
+              "<br>" +
+              " email = " +
+              email +
+              "<br>" +
+              " doctor=" +
+              doctor +
+              "<br>" +
+              " description =" +
+              description,
+          }).then((message) => alert(message));
+              }
+        }
+      </script>
+    </head>
+
+    <html>
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <img src="images/logo.png" alt="logo" />
+          </div>
+          <div class="head1">SoniDiabetesCare</div>
+          <div class="head2">Keep your heart Sweet.....</div>
+          <div class="head3">Not Blood.</div>
+        </div>
+        <div class="navigation" id="nav">
+          <ul class="navbar">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="index.html#about">ABOUT US</a></li>
+            <li>
+              <a href="services.html">SERVICES</a>
+              <ul class="submenu">
+                <li><a href="pharmacy.html">Pharmacy</a></li>
+                <li><a href="insulin workshop.html">Insulin Workshop</a></li>
+                <li>
+                  <a href="complete-diabetic profile.html"
+                    >Complete Diabetic Profile</a
+                  >
+                </li>
+
+                <li>
+                  <a href="one-time consultation fee.html"
+                    >One-time Consultation Fee</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li><a href="gallery.html">GALLERY</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="#form1">APPOINTMENT</a></li>
+          </ul>
+        </div>
+        <div class="navigation" style="width: 220px">
+          <ul class="navbar1">
+            <li>
+              <a href="https://www.facebook.com/SoniDiabetesCare/?ti=as"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </li>
+            <li>
+              <a href=""><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://wa.me/919461637475?text=Soni%20Diabities%20Care"
+                ><i class="fab fa-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <div class="section" id="form1"> FORM</div>
+        <div class="form" id="form">
+          <form>
+            <label>Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="e.g Kshitij Gupta">
+      
+          <br /><br />
+
+          <label for="phn">Mobile number:</label>
+          <input required type="tel" maxlength="10" required id="phn" name="phn" placeholder="e,g 8923213717" />
+          <br /><br />
+
+          <label for="email">email:</label>
+          <input
+            required
+            type="text"
+            id="email"
+            name="email"
+            placeholder="e.g kshitijgupta879@gmail.com"
+
+          />
+          <br /><br />
+
+          <label for="doctors">Select your doctor:</label>
+          <select id="doctor" name="doctor" required>
+            <option doctor1="doctor1">doctor1</option>
+            <option doctor2="doctor2">doctor2</option>
+            <option doctor3="doctor3">doctor3</option>
+          </select>
+          <br /><br />
+          <label for="description">description </label>
+          <input
+            required
+            type="text"
+            id="description"
+            name="description"
+            placeholder="Your description.."
+          />
+          <br />
+          <input type="button" value="Submit" onclick="doStuff()">
+          </form>
+        </div>
+
+       
+        <div class="section" id="contact">CONTACT US</div>
+      <div class="content">
+        <div class="contact">
+          <div id="left">
+            <div class="contact_logo">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div>
+              Address:-Near Allen Coaching, Piprali Road Sikar- 332001,
+              SoniDiabetesCare
+            </div>
+          </div>
+          <div id="center">
+            <div id="center">
+              <i class="fas fa-envelope-open-text"></i>
+              <a
+                href="mailto: sonidiabetescare@gmail.com"
+                style="text-decoration: none"
+                >E-mail:-sonidiabetescare@gmail.com</a
+              >
+            </div>
+          </div>
+          <div id="right">
+            <i class="fas fa-mobile"></i>
+
+            <a href="tel:+91 7073662430" style="text-decoration: none"
+              >Call me at:-+91 7073662430</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div class="copyright">
+          <div>© All rights reserved | SoniDiabetesCare.</div>
+        </div>
+        <div class="section" style="padding-bottom: 10px; margin: 0px">
+          <div class="navigation" style="width: 210px; margin: 10px">
+            <ul class="navbar1">
+              <li>
+                <a href="https://www.facebook.com/SoniDiabetesCare/?ti=as"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+              </li>
+              <li>
+                <a href=""><i class="fab fa-instagram"></i></a>
+              </li>
+              <li>
+                <a
+                  href="https://wa.me/919461637475?text=Soni%20Diabities%20Care"
+                  ><i class="fab fa-whatsapp"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright" style="padding-top: 0px">
+          <a
+            href="#"
+            style="
+              text-decoration: none;
+              font-style: normal;
+              display: inline-block;
+              width: auto;
+              border: 2px solid black;
+              padding: 5px;
+            "
+            >GO TO TOP</a
+          >
+        </div>
+      </div>
+      </div>
+    </html>
+></DOCTYPE>

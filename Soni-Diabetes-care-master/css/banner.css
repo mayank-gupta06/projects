@@ -1,0 +1,29 @@
+.banner {
+    width: 80%;
+    height: 600px;
+    min-height: 600px;
+    max-height: 600px;
+    background-size: 100% 100% ;
+    margin-bottom: 10px;
+    animation:slider 80s infinite  ease-in-out;
+    
+
+  }
+  @keyframes slider{
+    0%{background-image: url(../images/hospital.JPG);}
+    10%{background-image: url(../images/main.JPG);}
+    20%{background-image: url(../images/one.JPG);}
+    30%{background-image: url(../images/two.JPG);}
+    40%{background-image: url(../images/three.JPG);}
+    50%{background-image: url(../images/six.JPG);}
+    60%{background-image: url(../images/seven.JPG);}
+    70%{background-image: url(../images/nine.JPG);}
+    80%{background-image: url(../images/team.JPG);}
+    90%{background-image: url(../images/mama.JPG);}
+  100%{background-image: url(../images/seven.JPG);}
+    }
+  
+  .banner img {
+    width: 100%;
+    height: 650px;  
+  }
